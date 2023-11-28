@@ -1,11 +1,48 @@
 // チェッカー
 function setup() {
   createCanvas(200, 200);
-  let size = width / 8;
+  let size = width / 8;　//横幅200の８分の１
   noStroke();
-  for(let i = 0; i < 8; i++){
-    for(let j = 0; j < 8; j++){
-      // BLANK[1] (hint: rectのx座標は size * i, y座標はsize * j)
+  for(let i=0;i<8;i++){
+    for(let j=0;j<8;j++){
+
     }
   }
 }
+
+// fill(0);
+// let x = 20;
+// let y = 0;
+// while(x < 180, y <180){       // 座標が描画範囲内であれば続ける
+//   rect(x, y, 20, 20);
+//   x = x + 20; // 繰り返し1回ごとに場所を動かす
+//   y = y + 20;
+// }
+
+// fill(0);
+// let a = 0;
+// let b = 20;
+// while(a < 180,b <180){       // 座標が描画範囲内であれば続ける
+//   rect(a, b, 20, 20);
+//   a = a + 20; // 繰り返し1回ごとに場所を動かす
+//   b = b + 20;
+// }
+
+// fill(0);
+// let c = 60;
+// let d = 0;
+// while(c < 180,d <180){       // 座標が描画範囲内であれば続ける
+//   rect(c, d, 20, 20);
+//   c = c + 20; // 繰り返し1回ごとに場所を動かす
+//   d = d + 20;
+// }
+// }
+
+// fill(0);
+// let e = 100;
+// let f = 0;
+// while(e < 180,f <180){       // 座標が描画範囲内であれば続ける
+//   rect(e, f, 20, 20);
+//   e = e + 20; // 繰り返し1回ごとに場所を動かす
+//   f = f + 20;
+

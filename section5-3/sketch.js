@@ -1,59 +1,17 @@
-// テキスト「関数を作る(2) 結果を戻す関数」～「総仕上げ：カレンダーを描画しよう」
 function setup(){
-  createCanvas(200, 200);
-  calendar(2019, 10);
+  createCanvas(windowWidth, windowHeight);
+  background(160, 192, 255);
+  noStroke();
 
-  // isLeapYear の動作確認のため console に出力しています
-  for(let i = 2000; i <= 2100; i++){
-    if(isLeapYear(i)){
-      console.log(i + "年はうるう年です");
-    }
-    else{
-      console.log(i + "年はうるう年ではありません");
-    }
+  fill(255, 204, 0);
+  beginShape();
+  for(let i = 0; i < 5; i++){
+    let theta = TWO_PI * i * 2 / 5 - HALF_PI;
+    let x = widthWidth/2 + cos(theta) * 10;
+    //画面横幅の２分の１が星の中心のx座標→「2」を変更してクリスマスツリーの頂点に合わせる
+    let y = windowHeight/2 + sin(theta) * 10;
+    //画面縦幅の２分の１が星の中心のy座標→「２」を変更してクリスマスツリーの頂点に合わせる
+    vertex(x, y);
   }
-}
-
-function calendar(y, m){
-  let dow = dayOfWeek(y, m, 1);
-  for(let d = 1; d <= daysInMonth(y, m); d++){
-    // BLANK[3] (hint: まずは daysInYear, dayOfWeek を作ろう)
-  }
-}
-
-function isLeapYear(y){
-  return (y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0);
-}
-
-function daysInYear(y){
-  // BLANK[1]
-}
-
-function daysInMonth(y, m){
-  if(m == 2){
-    return isLeapYear(y) ? 29 : 28;
-  }
-  else if(m == 4 || m == 6 || m == 9 || m == 11){
-    return 30;
-  }
-  else{
-    return 31;
-  }
-}
-
-function dayOfYear(y, m, d){
-  let count = 0;
-  for(let i = 1; i < m; i++){
-    count += daysInMonth(y, i);
-  }
-  return count + d;
-}
-
-function dayOfWeek(y, m, d){
-  // BLANK[2]
-}
-
-function dayOfWeekAsString(dow){
-  const a = ["日", "月", "火", "水", "木", "金", "土", "日"];
-  return a[dow];
+  endShape(CLOSE);
 }
